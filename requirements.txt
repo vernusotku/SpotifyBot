@@ -1,5 +1,6 @@
-requests==2.25.1
-Flask_Session==0.3.2
-Flask==1.1.2
-mysql-connector-python==8.0.23
-pyTelegramBotAPI==3.7.6
+Flask
+mysql-connector-python
+pyTelegramBotAPI
+vk
+vk-api
+Flask_Session

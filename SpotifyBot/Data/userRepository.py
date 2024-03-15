@@ -24,4 +24,15 @@ class UserRepository(BaseRepository):
     def update_language(self, tgid, language):
         db.execute(f"UPDATE {self.tableName} SET language=%s WHERE tgid=%s", 
                             (language, tgid))
+
         db.close_cursor()
+
+    def stats(self):
+        cursor = db.execute(f"SELECT COUNT(*) FROM {self.tableName};")
+        data_1 = cursor.fetchone()
+        cursor = db.execute(f"SELECT COUNT(*) FROM {self.tableName} WHERE refresh_token IS NOT NULL;")
+        data_2 = cursor.fetchone()
+        db.close_cursor()
+        return (data_1,data_2)
+    
+
